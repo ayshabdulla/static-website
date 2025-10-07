@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fellis Clothing | Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #806767;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: #222;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f0c14b;
+    }
+
+    /* Hero Slideshow */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+      
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 70vh;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .active {
+      display: block;
+    }
+
+    /* Caption */
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      opacity: 50%;
+    }
+
+    /* Buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(122, 119, 119, 0.6);
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      border: none;
+    }
+
+    .prev { left: 20px; }
+    .next { right: 20px; }
+
+
+    /* Featured Collection */
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0 5px;
+    }
+
+    .card p {
+      color: #777;
+      margin: 0 0 15px;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Fellis Clothing</h1>
+    <p>Minimal | Modern | Premium</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="fellis .html">Home</a>
+    <a href="#">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero Slideshow -->
+  <div class="slideshow-container">
+    <div class="slide active" style="background-image: url('access.jpeg');">
+      <div class="caption">Discover Minimal Fashion</div>
+    </div>
+    <div class="slide" style="background-image: url('dress.jpeg');">
+      <div class="caption">Premium Collections</div>
+    </div>
+    <div class="slide" style="background-image: url('Post-Mastectomy Fashion_ 5 Things I Wish I Knew.jpeg');">
+      <div class="caption">Sustainable & Stylish</div>
+    </div>
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <!-- Featured Collection -->
+  <div class="container">
+    <h2>Featured Collection</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80" alt="Men's Jacket">
+        <h3>Men’s Jackets</h3>
+        <p>Starting at Rs 1000</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="Women's Dress">
+        <h3>Women’s Dresses</h3>
+        <p>Starting at Rs 1000</p>
+      </div>
+      <div class="card">
+        <img src="Luxe Silk Sleep & Beauty Collection - Rose Gold Edition_.jpeg" alt="Accessories">
+        <h3>Accessories</h3>
+        <p>Starting at Rs 300</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Fellis Clothing. All rights reserved.</p>
+  </footer>
+
+
+  <!-- JavaScript -->
+  <script>
+    // Slideshow
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) {
+          slide.classList.add("active");
+        }
+      });
+    }
+
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    function prevSlideFunc() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    next.addEventListener("click", nextSlide);
+    prev.addEventListener("click", prevSlideFunc);
+
+    setInterval(nextSlide, 2000); // auto slide every 4 sec
+
+    
+  </script>
+  
+</body>
+</html>
